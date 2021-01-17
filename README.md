@@ -1,2 +1,2 @@
 # fert_pred
-Project focusing on fertilizer prediction based on ML
+Project focusing on fertilizer predictor
