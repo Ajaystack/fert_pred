@@ -24,7 +24,7 @@
 		<div style="background-color: #afafaf;padding:8px;">
 			# filename = 'predict.py'</br>
 			import requests</br>
-			url = 'https://fertilizerprediction.herokuapp.com//api'</br>
+			url = 'https://fertilizerprediction.herokuapp.com/api'</br>
 			#r = requests.post(url,json={'V1':Temperature, 'V2':Humidity, 'V3':Moisture, 'V4':Soil_Type, 'V5':Crop_Type, 'V6':Nitrogen, 'V7':Potassium, 'V8':Phosphorus,})</br>
 			#In API dictionary datatype for keys are of string datatype and values datatype is int as shown in <b>example</b> below:</br>
 			r = requests.post(url,json={'V1':27, 'V2':55, 'V3':54, 'V4':1, 'V5':6, 'V6':12, 'V7':4, 'V8':4,})</br>
