@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+	{% block meta_link %}<link rel="stylesheet" href="{{ url_for('static', filename='project_specific.css') }}">{% endblock %}
+	{% block headblock %} Project ML {% endblock %}
+	{% block content %}
+		<body class="w3-light-grey">
+		<!-- w3-content defines a container for fixed size centered content, 
+		and is wrapped around the whole page content, except for the footer in this example -->
+		<div class="w3-content" style="max-width:1400px">
+
+		<!-- Header -->
+			<header class="w3-container w3-center w3-padding-32"> 
+				<h1><b>Fertilizer Predictor	</b></h1>
+				<p>Specify  <span class="w3-tag"> values</span></p>
+			</header>
+			
+			<div class="w3-card w3-margin" name="main" id="main">
+				<!--div class="w3-container w3-padding">
+				<h4>Popular Posts</h4>
+				</div-->
+				<form method="post"> 
+				
+				<label for="soil-type"> Soil Type : </label></br>
+				<select id="V4" name="V4" required>
+				<option value="" selected disabled hidden> Choose here </option>
+				<option value=1>Black</option>
+				<option value=2>Clayey</option>
+				<option value=3>Loamy</option>
+				<option value=4>Red</option>
+				<option value=5>Sandy</option>
+				</select></br></br>
+
+				<label for="soil-type"  >Crop Type : </label></br>
+				<select id="V5" name="V5" required>
+				<option value="" selected disabled hidden> Choose here </option>
+				<option value=11>Wheat</option>
+				<option value=7>Paddy</option>
+				<option value=8>Pulses</option>
+				<option value=4>Maize</option>
+				<option value=9>Sugarcane</option>
+				<option value=2>Cotton</option>
+				<option value=3>Groundnuts</option>
+				<option value=6>Oil Seeds</option>
+				<option value=5>Millets</option>
+				<option value=1>Barley</option>
+				<option value=10>Tobacco</option>
+				</select></br></br>
+
+				Temperature(25 - 38): </br><input class='V1' id='V1' name='V1'  placeholder="Temperature " required> <br> <br> 
+
+				Humidity   (50 - 72): </br><input class='V2' id='V2' name='V2' placeholder="Humidity" required> <br> <br> 
+
+				Moisture   (25 - 63): </br><input class='V3' id='V3' name='V3' placeholder="Moisture " required> <br> <br> 
+
+				Nitrogen   ( 4 - 42): </br><input class='V6' id='V6' name='V6' placeholder=" Nitrogen " required> <br> <br> 
+
+				Potassium  ( 0 - 19): </br><input class='V7' id='V7' name='V7' placeholder="Potassium " required> <br> <br> 
+
+				Phosphorus ( 0 - 42): </br><input class='V8' id='V8' name='V8' placeholder="Phosphorus" required> <br> <br> 
+
+				<button type="submit" >Get Result</button>
+				</form> 
+			  </div>
+			  <hr> 						
+
+			<!-- Footer -->
+			<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+				<a href="{{ url_for('predict', _anchor='main') }}" class="w3-button w3-black w3-padding-large w3-margin-bottom">Prediction Page</a>
+				<a href="{{ url_for('about', _anchor='main') }}" class="w3-button w3-black w3-padding-large w3-margin-bottom">About</a>
+				<a href="{{ url_for('team', _anchor='main') }}" class="w3-button w3-black w3-padding-large w3-margin-bottom">Team</a>
+			
+			<p> © 2021 Some rights reserved</p>
+			</footer>
+
+		</body>
+{% endblock %}

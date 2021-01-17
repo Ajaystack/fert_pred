@@ -1,0 +1,10 @@
+@media 
+only screen and (min-device-width: 1025px) {
+img.profile{border-radius:50%;    height: 160px}
+html,body{font:size:22px;}
+.res{font-size: 22px; margin-top:50px;margin-bottom:50px;padding-top:50px;padding-bottom:50px;} .link { font-size: 22px;text-decoration:none;	 } 
+form{padding:8px;margin:8px;text-align:center;}
+input, select{position:absolute;padding:4px;width:400px;margin:4px;background-color: rgb(0 0 0 / 56%);color: #ffffffd9;border: none;}}
+@media only screen and (max-width: 760px),(min-device-width: 768px) and (max-device-width: 1024px)  { .res{font-size: 22px; } .link { font-size: 22px;text-decoration:none;	 } 
+ input, select{position:absolute;padding:4px;width:80%;margin:4px;background-color: rgb(0 0 0 / 56%);color: #ffffffd9;border: none;} html,body{font:size:22px;}
+ form{padding:8px;text-align:auto;margin:8px;}img.profile{border-radius:50%;height: 160px}}

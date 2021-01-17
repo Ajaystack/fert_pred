@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+	{% block headblock %} About {% endblock %}
+	{% block meta_link %}<link rel="stylesheet" href="{{ url_for('static', filename='project_specific.css') }}">{% endblock %}
+	{% block content %}
+	<body class="w3-light-grey">
+		<!-- w3-content defines a container for fixed size centered content, 
+		and is wrapped around the whole page content, except for the footer in this example -->
+		<div class="w3-content" style="max-width:1400px">
+
+		<!-- Header -->
+		<header class="w3-container w3-center w3-padding-32"> 
+		<h1><b>Details about project</b></h1>
+		</header>
+		
+		<div class="w3-card w3-margin" name="main" id="main" >
+				<!--div class="w3-container w3-padding">
+				<h4>Popular Posts</h4>
+				</div-->
+		<!-- Paragraph for content -->
+		<div class="w3-container" id="main" name="main">
+		<h3>Fertilizer prediction:</h3><p>This Web interface is software part of our <b>Fertilizer prediction project</b>. It also works independentely as you can enter details in prediction page and click on <b>Get Result </b> button to fetch prediction results. </p>
+		<h3>Working :</h3><p> At backend a <b>python</b> code is handling user queries and <b>Machine learning</b> part.</p>
+		<h3>JSONify :</h3><p>if you want to implement this project and want to use our predcition model you can use <b>JSON</b> based <b>API</b>. <b> Python code </b> for Fetching data through API is: </br>
+		<div style="background-color: #afafaf;padding:8px;">
+			# filename = 'predict.py'</br>
+			import requests</br>
+			url = 'https://fertlmodel.herokuapp.com/api'</br>
+			#r = requests.post(url,json={'V1':Temperature, 'V2':Humidity, 'V3':Moisture, 'V4':Soil_Type, 'V5':Crop_Type, 'V6':Nitrogen, 'V7':Potassium, 'V8':Phosphorus,})</br>
+			#In API dictionary datatype for keys are of string datatype and values datatype is int as shown in <b>example</b> below:</br>
+			r = requests.post(url,json={'V1':27, 'V2':55, 'V3':54, 'V4':1, 'V5':6, 'V6':12, 'V7':4, 'V8':4,})</br>
+			# Get result back in json and use below code to get string output.</br>
+			print(r.json())</br></div>
+		
+		</br><b>Some Important information for code:</b>
+		</br><b>Crop Type :</b>1:'Barley', 2:'Cotton', 3:'Groundnuts', 4:'Maize', 5:'Millets', 6:'Oil Seeds', 7:'Paddy', 8:'Pulses', 9:'Sugarcane', 10:'Tobacco', 11:'Wheat'
+		</br><b>Soil Type :</b>1:'Black', 2:'Clayey', 3:'Loamy', 4:'Red', 5:'Sandy'
+		</br><b>Note :</b>Values beyond specified dictionary will not give precise result.Please avoid entering some other values.
+
+		<h3>Uses:</h3><p>This project can help <b>students</b> and <b>researcher</b>:</br>1. To implement a simliar project.</br>2. It can be used for <b>Real time</b> prediction using API implemented at hardware end.</p>
+	
+		</div>
+		</div>
+
+		<!-- Footer -->
+		<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+		<a href="{{ url_for('predict', _anchor='main') }}" class="w3-button w3-black w3-padding-large w3-margin-bottom">Prediction Page</a>
+		<a href="{{ url_for('about', _anchor='main') }}" class="w3-button w3-black w3-padding-large w3-margin-bottom">About</a>
+		<a href="{{ url_for('team', _anchor='main') }}" class="w3-button w3-black w3-padding-large w3-margin-bottom">Team</a>
+		<p> © 2021 Some rights reserved</p>
+		</footer>
+	</body>
+{% endblock %}
