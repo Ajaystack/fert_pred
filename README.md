@@ -1,2 +1,2 @@
 # fert_pred
-Project focusing on fertilizer predictor
+Project focusing on fertilizer predictor. 
