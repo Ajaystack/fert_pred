@@ -1,6 +1,6 @@
 import requests
 
-url = 'http://localhost:5000/api'
+url = 'https://fertilizerprediction.herokuapp.com/api'
 
 r = requests.post(url,json={'V1':27, 'V2':55, 'V3':54, 'V4':1, 'V5':6, 'V6':12, 'V7':4, 'V8':4,})
 
