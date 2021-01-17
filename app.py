@@ -48,7 +48,7 @@ def predict():
 @app.route('/api',methods=['POST'])
 def predictjson():
    data = request.get_json(force=True) 
-   prediction = model.predict([np.array([data['V1'], data['V2'], data['V3'], data['V4'], data['V5'], data['V6'], data['V7'], data['V8']])])
+   prediction = model.predict([np.array([int(data['V1']), int(data['V2']), int(data['V3']), int(data['V4']), int(data['V5']), int(data['V6']), int(data['V7']), int(data['V8'])])])
    output = str(ferdict[int(prediction[0])]) + ',' + str(stdict[int(data['V4'])]) + ',' +str(ctdict[int(data['V5'])])
    return jsonify(output)
 
