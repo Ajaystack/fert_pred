@@ -29,14 +29,14 @@ def blog():
 @app.route('/predict/', methods=['POST','GET']) 
 def predict():
     if request.method == 'POST':
-        V1 = request.form['V1']
-        V2 = request.form['V2']
-        V3 = request.form['V3']
-        V4 = request.form['V4']
-        V5 = request.form['V5']
-        V6 = request.form['V6']
-        V7 = request.form['V7']
-        V8 = request.form['V8']
+        V1 = int(request.form['V1'])
+        V2 = int(request.form['V2'])
+        V3 = int(request.form['V3'])
+        V4 = int(request.form['V4'])
+        V5 = int(request.form['V5'])
+        V6 = int(request.form['V6'])
+        V7 = int(request.form['V7'])
+        V8 = int(request.form['V8'])
         x3 = [[V1, V2, V3, V4, V5, V6, V7, V8]]
         res = int(model.predict(x3))
         st = 'Soil_Type : ' + stdict[int(V4)]
