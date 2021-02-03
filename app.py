@@ -45,7 +45,7 @@ def predict():
         return render_template('result.html', _anchor='main', st=st, ct=ct, fr=fr)
     return render_template('predict.html', _anchor='main')
 
-@app.route('/api',methods=['POST'])
+@app.route('/api',methods=['GET','POST'])
 def predictjson():
    data = request.get_json(force=True) 
    prediction = model.predict([np.array([int(data['V1']), int(data['V2']), int(data['V3']), int(data['V4']), int(data['V5']), int(data['V6']), int(data['V7']), int(data['V8'])])])
@@ -54,10 +54,9 @@ def predictjson():
 
 @app.route('/arapi',methods=['GET','POST'])
 def predictforarduino():
-   data = request.get_json(force=True) 
-   prediction = int(model.predict([np.array([int(data['V1']), int(data['V2']), int(data['V3']), int(data['V4']), int(data['V5']), int(data['V6']), int(data['V7']), int(data['V8'])])]))
-   output = str(ferdict[int(prediction[0])]) + ',' + str(stdict[int(data['V4'])]) + ',' + str(ctdict[int(data['V5'])])
-   return prediction
+   data1 = request.get_json(force=True) 
+   predictres = model.predict([np.array([int(data1['V1']), int(data1['V2']), int(data1['V3']), int(data1['V4']), int(data1['V5']), int(data1['V6']), int(data1['V7']), int(data1['V8'])])])
+   return predictres
 
 if __name__ == '__main__': 
    app.run(debug=False)
