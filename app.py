@@ -1,4 +1,4 @@
-﻿from flask import Flask,request, url_for, redirect, render_template, request, jsonify
+from flask import Flask,request, url_for, redirect, render_template, request, jsonify
 import pickle 
 import numpy as np 
 
@@ -53,10 +53,10 @@ def predictjson():
    return jsonify(output)
 
 @app.route('/arapi',methods=['POST'])
-def predictjson():
+def predictforarduino():
    data = request.get_json(force=True) 
    prediction = int(model.predict([np.array([int(data['V1']), int(data['V2']), int(data['V3']), int(data['V4']), int(data['V5']), int(data['V6']), int(data['V7']), int(data['V8'])])]))
-   output = str(ferdict[int(prediction[0])]) + ',' + str(stdict[int(data['V4'])]) + ',' +str(ctdict[int(data['V5'])])
+   output = str(ferdict[int(prediction[0])]) + ',' + str(stdict[int(data['V4'])]) + ',' + str(ctdict[int(data['V5'])])
    return prediction
 
 if __name__ == '__main__': 
