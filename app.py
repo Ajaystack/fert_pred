@@ -54,9 +54,10 @@ def predictjson():
 
 @app.route('/arapi',methods=['GET','POST'])
 def predictforarduino():
-   data1 = request.get_json(force=True) 
-   predictres = model.predict([np.array([int(data1['V1']), int(data1['V2']), int(data1['V3']), int(data1['V4']), int(data1['V5']), int(data1['V6']), int(data1['V7']), int(data1['V8'])])])
-   return predictres
+   data = request.get_json(force=True) 
+   prediction = model.predict([np.array([int(data['V1']), int(data['V2']), int(data['V3']), int(data['V4']), int(data['V5']), int(data['V6']), int(data['V7']), int(data['V8'])])])
+   output = str(ferdict[int(prediction[0])]) + ',' + str(stdict[int(data['V4'])]) )
+   return jsonify(output)
 
 if __name__ == '__main__': 
    app.run(debug=False)
